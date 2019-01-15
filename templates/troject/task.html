@@ -1,0 +1,27 @@
+<h1>Tasks</h1>
+<h2>todo</h2>
+<ul>
+{% for task in todo %}
+    <li>{{ task.updated }} - {{ task.title }} - {{ task }} - {{ task.group }}</li>
+{% empty %}
+    <li>No articles yet.</li>
+{% endfor %}
+</ul>
+<h2>doing</h2>
+<ul>
+{% for task in doing %}
+    <li>{{ task.updated }} - {{ task.title }} - {{ task }} - {{ task.group }}</li>
+    <a href="/create/{{ task.id }}">create</a>
+    <a href="/delete/{{ task.id }}">delete</a>
+{% empty %}
+    <li>No articles yet.</li>
+{% endfor %}
+</ul>
+<h2>done</h2>
+<ul>
+{% for task in done %}
+    <li>{{ task.updated }} - {{ task.title }} - {{ task }} - {{ task.group }}</li>
+{% empty %}
+    <li>No articles yet.</li>
+{% endfor %}
+</ul>
