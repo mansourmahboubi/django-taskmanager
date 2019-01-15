@@ -1,0 +1,8 @@
+<h1>Tasks</h1>
+<ul>
+{% for task in object_list %}
+    <li>{{ task.updated }} - {{ task.title }} - {{ task }} - {{ task.group }}</li>
+{% empty %}
+    <li>No articles yet.</li>
+{% endfor %}
+</ul>
