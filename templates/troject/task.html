@@ -5,56 +5,75 @@
 <div class="container">
   <div class="row">
 
-    <div class="col-sm">
-      <h2 class="text-center">todo</h2>
-      {% for task in todo %}
-      <a href="/{{ task.id }}" class="d-block">
-      <div class="card mt-2 text-center bx-shadow" style="width: 18rem;">
+    <div class="col">
+      <h2 class="text-center">Home</h2>
+      {% for task in home %}
+
+      <div class="card mt-2 text-center bx-shadow">
         <div class="card-body">
           <h5 class="card-title">{{ task }}</h5>
           <h6 class="card-subtitle mb-2 text-muted">{{ task.title }}</h6>
-          <h6 class="card-subtitle mb-2 text-muted">{{ task.updated }}</h6>
-          <h6 class="card-subtitle mb-2 text-muted">{% if not task.status %}<a href="/edit/delete/{{ task.id }}""><i class="bounceIn text-danger fas fa-eraser fa-2x"></i></a>{%endif%}</h6>
+          <h6 class="card-subtitle mb-4 text-muted">{{ task.updated }}</h6>
+          <h6 class="card-subtitle mb-2 text-muted">
+            {% if not task.status %}
+            <a href="/edit/delete/{{ task.id }}""><i class="bounceIn mr-2 text-danger fas fa-trash-alt fa-2x"></i></a>
+            {%endif%}
+            <a href="/{{ task.id }}"><i class="text-dark fas fa-sync fa-2x"></i></a>
+          </h6>
         </div>
       </div>
-      </a>
+
       {% empty %}
-      <li>No articles yet.</li>
+      No Task yet.
       {% endfor %}
     </div>
 
-    <div class="col-sm">
-      <h2 class="text-center">doing</h2>
+    <div class="col">
+      <h2 class="text-center">Work</h2>
       <ul>
-        {% for task in doing %}
-        <div class="card mt-2 text-center bx-shadow" style="width: 18rem;">
+        {% for task in work %}
+
+        <div class="card mt-2 text-center bx-shadow">
           <div class="card-body">
             <h5 class="card-title">{{ task }}</h5>
             <h6 class="card-subtitle mb-2 text-muted">{{ task.title }}</h6>
-            <h6 class="card-subtitle mb-2 text-muted">{{ task.updated }}</h6>
-            <h6 class="card-subtitle mb-2 text-muted">{% if not task.status %}<a href="/edit/delete/{{ task.id }}""><i class="bounceIn text-danger fas fa-eraser fa-2x"></i></a>{%endif%}</h6>
+            <h6 class="card-subtitle mb-4 text-muted">{{ task.updated }}</h6>
+            <h6 class="card-subtitle mb-2 text-muted">
+              {% if not task.status %}
+              <a href="/edit/delete/{{ task.id }}""><i class="bounceIn mr-2 text-danger fas fa-trash-alt fa-2x"></i></a>
+              {%endif%}
+              <a href="/{{ task.id }}"><i class="text-dark fas fa-sync fa-2x"></i></a>
+            </h6>
           </div>
         </div>
+
         {% empty %}
-        <li>No articles yet.</li>
+        No Task yet.
         {% endfor %}
       </ul>
     </div>
 
-    <div class="col-sm">
-      <h2 class="text-center">done</h2>
+    <div class="col">
+      <h2 class="text-center">Entertainment</h2>
       <ul>
-        {% for task in future %}
-        <div class="card mt-2 text-center bx-shadow" style="width: 18rem;">
+        {% for task in entertainment %}
+
+        <div class="card mt-2 text-center bx-shadow">
           <div class="card-body">
             <h5 class="card-title">{{ task }}</h5>
             <h6 class="card-subtitle mb-2 text-muted">{{ task.title }}</h6>
-            <h6 class="card-subtitle mb-2 text-muted">{{ task.updated }}</h6>
-            <h6 class="card-subtitle mb-2 text-muted">{% if not task.status %}<a href="/edit/delete/{{ task.id }}""><i class="bounceIn text-danger fas fa-eraser fa-2x"></i></a>{%endif%}</h6>
+            <h6 class="card-subtitle mb-4 text-muted">{{ task.updated }}</h6>
+            <h6 class="card-subtitle mb-2 text-muted">
+              {% if not task.status %}
+              <a href="/edit/delete/{{ task.id }}""><i class="bounceIn mr-2 text-danger fas fa-trash-alt fa-2x"></i></a>
+              {%endif%}
+              <a href="/{{ task.id }}"><i class="text-dark fas fa-sync fa-2x"></i></a>
+            </h6>
           </div>
         </div>
+
         {% empty %}
-        <li>No articles yet.</li>
+        No Task yet.
         {% endfor %}
       </ul>
     </div>

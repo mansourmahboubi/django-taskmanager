@@ -31,8 +31,8 @@ def task_list(request, pk=None):
         task.save()
     context = {}
     Tasks = Task.objects.all()
-    #  predefined groups = [ todo, doing ,done]
-    context['todo'] = Tasks.filter(group__title='todo')[:5]
-    context['doing'] = Tasks.filter(group__title='doing')[:5]
-    context['future'] = Tasks.filter(group__title='future')[:5]
+    #  predefined groups = [ home, work ,entertainment]
+    context['home'] = Tasks.filter(group__title='home')[:5]
+    context['work'] = Tasks.filter(group__title='work')[:5]
+    context['entertainment'] = Tasks.filter(group__title='entertainment')[:5]
     return render(request, 'troject/task.html', context)
