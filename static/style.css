@@ -3,8 +3,9 @@
      -moz-box-shadow: 0 10px 6px -6px #777;
           box-shadow: 0 10px 6px -6px #777;
 }
-body {
-  background: radial-gradient(ellipse at bottom center, #94E8CF 0%, #8bcbc6 100%);
+body{
+  /* https://webkul.github.io/coolhue/ */
+background-image: linear-gradient( 135deg, #FFF5C3 10%, #9452A5 100%);
 }
 /* https://www.w3schools.com/howto/howto_css_custom_scrollbar.asp */
 /* width */
