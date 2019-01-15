@@ -1,4 +1,19 @@
-<form action="" method="post">{% csrf_token %}
-    <p>Are you sure you want to delete "{{ object }}"?</p>
-    <input type="submit" value="Confirm" />
-</form>
+{%extends "base.html" %}
+{% block content %}
+<style>
+  body, html {
+    height: 100%;
+  }
+</style>
+<div class="container">
+  <div class="row justify-content-md-center">
+    <div class="col-md-auto">
+      <form action="" method="post" class="text-center">{% csrf_token %}
+        <p>Are you sure you want to delete "{{ object.title }}"?</p>
+        <input class="btn btn-secondary" type="submit" value="Confirm" />
+      </form>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

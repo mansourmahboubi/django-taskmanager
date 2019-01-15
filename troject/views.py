@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from django.views.generic.list import ListView
 from django.views.generic.edit import CreateView, DeleteView
 from .models import Task
@@ -21,14 +21,9 @@ class TaskDelete(DeleteView):
 
 # the main function
 # it displays home page with task groups
-# and also is responsible for change status requests
 
 
 def task_list(request, pk=None):
-    if pk:
-        task = get_object_or_404(Task, id=pk)
-        task.status = not task.status
-        task.save()
     context = {}
     Tasks = Task.objects.all()
     #  predefined groups = [ home, work ,entertainment]
@@ -36,3 +31,12 @@ def task_list(request, pk=None):
     context['work'] = Tasks.filter(group__title='work')[:5]
     context['entertainment'] = Tasks.filter(group__title='entertainment')[:5]
     return render(request, 'troject/task.html', context)
+
+# call it through a button and it changes task status
+
+
+def change_status(request, pk):
+    task = get_object_or_404(Task, id=pk)
+    task.status = not task.status
+    task.save()
+    return redirect('/')

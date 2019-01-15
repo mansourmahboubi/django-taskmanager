@@ -10,9 +10,9 @@
 <div class="container">
   <div class="row justify-content-md-center">
     <div class="col-md-auto">
-      <form action="" method="post">{% csrf_token %}
+      <form action="" method="post" class="text-center">{% csrf_token %}
         {{ form|crispy }}
-        <input type="submit" value="Save" />
+        <input class="btn btn-secondary" type="submit" value="Save" />
       </form>
     </div>
   </div>
