@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.views.generic.list import ListView
 from django.views.generic.edit import CreateView, DeleteView
 from .models import Task
@@ -19,8 +19,16 @@ class TaskDelete(DeleteView):
     model = Task
     success_url = '/'
 
+# the main function
+# it displays home page with task groups
+# and also is responsible for change status requests
 
-def task_list(request):
+
+def task_list(request, pk=None):
+    if pk:
+        task = get_object_or_404(Task, id=pk)
+        task.status = not task.status
+        task.save()
     context = {}
     Tasks = Task.objects.all()
     #  predefined groups = [ todo, doing ,done]

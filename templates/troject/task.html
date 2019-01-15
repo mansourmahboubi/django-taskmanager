@@ -8,16 +8,16 @@
     <div class="col-sm">
       <h2 class="text-center">todo</h2>
       {% for task in todo %}
-
+      <a href="/{{ task.id }}" class="d-block">
       <div class="card mt-2 text-center bx-shadow" style="width: 18rem;">
         <div class="card-body">
           <h5 class="card-title">{{ task }}</h5>
-          <h6 class="card-subtitle mb-2 text-muted">{{ task.title }} - {{ task.group }}</h6>
+          <h6 class="card-subtitle mb-2 text-muted">{{ task.title }}</h6>
           <h6 class="card-subtitle mb-2 text-muted">{{ task.updated }}</h6>
-          <h6 class="card-subtitle mb-2 text-muted">{% if not task.status %}<a href="/delete/{{ task.id }}""><i class="bounceIn text-danger fas fa-eraser fa-2x"></i></a>{%endif%}</h6>
+          <h6 class="card-subtitle mb-2 text-muted">{% if not task.status %}<a href="/edit/delete/{{ task.id }}""><i class="bounceIn text-danger fas fa-eraser fa-2x"></i></a>{%endif%}</h6>
         </div>
       </div>
-
+      </a>
       {% empty %}
       <li>No articles yet.</li>
       {% endfor %}
@@ -30,9 +30,9 @@
         <div class="card mt-2 text-center bx-shadow" style="width: 18rem;">
           <div class="card-body">
             <h5 class="card-title">{{ task }}</h5>
-            <h6 class="card-subtitle mb-2 text-muted">{{ task.title }} - {{ task.group }}</h6>
+            <h6 class="card-subtitle mb-2 text-muted">{{ task.title }}</h6>
             <h6 class="card-subtitle mb-2 text-muted">{{ task.updated }}</h6>
-            <h6 class="card-subtitle mb-2 text-muted">{% if not task.status %}<a href="/delete/{{ task.id }}""><i class="bounceIn text-danger fas fa-eraser fa-2x"></i></a>{%endif%}</h6>
+            <h6 class="card-subtitle mb-2 text-muted">{% if not task.status %}<a href="/edit/delete/{{ task.id }}""><i class="bounceIn text-danger fas fa-eraser fa-2x"></i></a>{%endif%}</h6>
           </div>
         </div>
         {% empty %}
@@ -48,9 +48,9 @@
         <div class="card mt-2 text-center bx-shadow" style="width: 18rem;">
           <div class="card-body">
             <h5 class="card-title">{{ task }}</h5>
-            <h6 class="card-subtitle mb-2 text-muted">{{ task.title }} - {{ task.group }}</h6>
+            <h6 class="card-subtitle mb-2 text-muted">{{ task.title }}</h6>
             <h6 class="card-subtitle mb-2 text-muted">{{ task.updated }}</h6>
-            <h6 class="card-subtitle mb-2 text-muted">{% if not task.status %}<a href="/delete/{{ task.id }}""><i class="bounceIn text-danger fas fa-eraser fa-2x"></i></a>{%endif%}</h6>
+            <h6 class="card-subtitle mb-2 text-muted">{% if not task.status %}<a href="/edit/delete/{{ task.id }}""><i class="bounceIn text-danger fas fa-eraser fa-2x"></i></a>{%endif%}</h6>
           </div>
         </div>
         {% empty %}
