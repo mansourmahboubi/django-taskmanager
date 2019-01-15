@@ -1,7 +1,7 @@
 from django.db import models
 
 
-class Group(models.model):
+class Group(models.Model):
     title = models.CharField(max_length=200)
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
@@ -10,9 +10,9 @@ class Group(models.model):
         return self.title
 
 
-class Task(models.model):
+class Task(models.Model):
     group = models.ForeignKey(Group)
-    status = models.BooleanField(default=True)
+    status = models.BooleanField(default=False)
     title = models.CharField(max_length=200)
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
