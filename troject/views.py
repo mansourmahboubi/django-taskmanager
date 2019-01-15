@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.views.generic.list import ListView
 from django.views.generic.edit import CreateView, DeleteView
-from .models import Task, Group
+from .models import Task
 
 
 # https://docs.djangoproject.com/en/1.11/ref/class-based-views/generic-display/
