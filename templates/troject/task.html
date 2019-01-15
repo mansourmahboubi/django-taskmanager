@@ -1,32 +1,71 @@
 {%extends "base.html" %}
 {% block content %}
-<h1>Tasks</h1>
-<a href="/create/" target="_blank">create New one</a>
-<h2>todo</h2>
-<ul>
-{% for task in todo %}
-    <li>{{ task.updated }} - {{ task.title }} - {{ task }} - {{ task.group }}</li>
-    {% if not task.status %}<a href="/delete/{{ task.id }}" target="_blank"">delete</a>{%endif%}
-{% empty %}
-    <li>No articles yet.</li>
-{% endfor %}
-</ul>
-<h2>doing</h2>
-<ul>
-{% for task in doing %}
-    <li>{{ task.updated }} - {{ task.title }} - {{ task }} - {{ task.group }}</li>
-    {% if not task.status %}<a href="/delete/{{ task.id }}" target="_blank"">delete</a>{%endif%}
-{% empty %}
-    <li>No articles yet.</li>
-{% endfor %}
-</ul>
-<h2>done</h2>
-<ul>
-{% for task in future %}
-    <li>{{ task.updated }} - {{ task.title }} - {{ task }} - {{ task.group }}</li>
-    {% if not task.status %}<a href="/delete/{{ task.id }}" target="_blank"">delete</a>{%endif%}
-{% empty %}
-    <li>No articles yet.</li>
-{% endfor %}
-</ul>
+{% load static %}
+
+<nav id="navbar-example2" class="navbar navbar-light">
+  <a class="navbar-brand" href="#">
+  <img src="{% static "DesignStudioLogo.png" %}" width="150" height="30" alt="">
+</a>
+  <a href="/create/">create New one</a>
+</nav>
+
+<div class="container">
+  <div class="row">
+
+    <div class="col-sm">
+      <h2 class="text-center">todo</h2>
+      {% for task in todo %}
+
+      <div class="card mt-2 text-center bx-shadow" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title">{{ task }}</h5>
+          <h6 class="card-subtitle mb-2 text-muted">{{ task.title }} - {{ task.group }}</h6>
+          <h6 class="card-subtitle mb-2 text-muted">{{ task.updated }}</h6>
+          <h6 class="card-subtitle mb-2 text-muted">{% if not task.status %}<a href="/delete/{{ task.id }}""><i class="bounceIn text-danger fas fa-eraser fa-2x"></i></a>{%endif%}</h6>
+        </div>
+      </div>
+
+      {% empty %}
+      <li>No articles yet.</li>
+      {% endfor %}
+    </div>
+
+    <div class="col-sm">
+      <h2 class="text-center">doing</h2>
+      <ul>
+        {% for task in doing %}
+        <div class="card mt-2 text-center bx-shadow" style="width: 18rem;">
+          <div class="card-body">
+            <h5 class="card-title">{{ task }}</h5>
+            <h6 class="card-subtitle mb-2 text-muted">{{ task.title }} - {{ task.group }}</h6>
+            <h6 class="card-subtitle mb-2 text-muted">{{ task.updated }}</h6>
+            <h6 class="card-subtitle mb-2 text-muted">{% if not task.status %}<a href="/delete/{{ task.id }}""><i class="bounceIn text-danger fas fa-eraser fa-2x"></i></a>{%endif%}</h6>
+          </div>
+        </div>
+        {% empty %}
+        <li>No articles yet.</li>
+        {% endfor %}
+      </ul>
+    </div>
+
+    <div class="col-sm">
+      <h2 class="text-center">done</h2>
+      <ul>
+        {% for task in future %}
+        <div class="card mt-2 text-center bx-shadow" style="width: 18rem;">
+          <div class="card-body">
+            <h5 class="card-title">{{ task }}</h5>
+            <h6 class="card-subtitle mb-2 text-muted">{{ task.title }} - {{ task.group }}</h6>
+            <h6 class="card-subtitle mb-2 text-muted">{{ task.updated }}</h6>
+            <h6 class="card-subtitle mb-2 text-muted">{% if not task.status %}<a href="/delete/{{ task.id }}""><i class="bounceIn text-danger fas fa-eraser fa-2x"></i></a>{%endif%}</h6>
+          </div>
+        </div>
+        {% empty %}
+        <li>No articles yet.</li>
+        {% endfor %}
+      </ul>
+    </div>
+
+  </div>
+</div>
 {% endblock %}
