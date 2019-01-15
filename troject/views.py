@@ -17,6 +17,7 @@ class Taskcreate(CreateView):
 
 class TaskDelete(DeleteView):
     model = Task
+    success_url = '/'
 
 
 def task_list(request):
@@ -25,5 +26,5 @@ def task_list(request):
     #  predefined groups = [ todo, doing ,done]
     context['todo'] = Tasks.filter(group__title='todo')[:5]
     context['doing'] = Tasks.filter(group__title='doing')[:5]
-    context['done'] = Tasks.filter(group__title='doing')[:5]
+    context['future'] = Tasks.filter(group__title='future')[:5]
     return render(request, 'troject/task.html', context)

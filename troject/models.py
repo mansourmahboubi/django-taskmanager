@@ -1,4 +1,5 @@
 from django.db import models
+from django.core.urlresolvers import reverse
 
 
 class Group(models.Model):
@@ -21,3 +22,6 @@ class Task(models.Model):
         if self.status:
             return "Done"
         return "Pending"
+
+    def get_absolute_url(self):
+        return reverse('troject:tasklist')

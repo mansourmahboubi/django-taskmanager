@@ -1,8 +1,10 @@
 <h1>Tasks</h1>
+<a href="/create/" target="_blank">create New one</a>
 <h2>todo</h2>
 <ul>
 {% for task in todo %}
     <li>{{ task.updated }} - {{ task.title }} - {{ task }} - {{ task.group }}</li>
+    {% if not task.status %}<a href="/delete/{{ task.id }}" target="_blank"">delete</a>{%endif%}
 {% empty %}
     <li>No articles yet.</li>
 {% endfor %}
@@ -11,16 +13,16 @@
 <ul>
 {% for task in doing %}
     <li>{{ task.updated }} - {{ task.title }} - {{ task }} - {{ task.group }}</li>
-    <a href="/create/{{ task.id }}">create</a>
-    <a href="/delete/{{ task.id }}">delete</a>
+    {% if not task.status %}<a href="/delete/{{ task.id }}" target="_blank"">delete</a>{%endif%}
 {% empty %}
     <li>No articles yet.</li>
 {% endfor %}
 </ul>
 <h2>done</h2>
 <ul>
-{% for task in done %}
+{% for task in future %}
     <li>{{ task.updated }} - {{ task.title }} - {{ task }} - {{ task.group }}</li>
+    {% if not task.status %}<a href="/delete/{{ task.id }}" target="_blank"">delete</a>{%endif%}
 {% empty %}
     <li>No articles yet.</li>
 {% endfor %}
