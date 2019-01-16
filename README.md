@@ -9,7 +9,7 @@ project works with 3 groups which should be made in database
 
 
 * the groups are hardcoded in [views](troject/views.py)
-* it also can be done by getting a query from three last groups
+* it also can be done by getting a query from last three groups
 
 # Usage
 you can start with

@@ -16,6 +16,8 @@ class Taskcreate(CreateView):
 
 
 class TaskDelete(DeleteView):
+    # limiting the query set to avoid unprivileged deleting
+    queryset = Task.objects.all().filter(status=False)
     model = Task
     success_url = '/'
 
