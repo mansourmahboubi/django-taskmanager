@@ -5,7 +5,7 @@
 <div class="container">
   <div class="row">
 
-    <div class="col">
+    <div class="col-12 col-md-4">
       <h2 class="text-center">Home</h2>
       {% for task in home %}
 
@@ -28,9 +28,8 @@
       {% endfor %}
     </div>
 
-    <div class="col">
+    <div class="col-12 col-md-4">
       <h2 class="text-center">Work</h2>
-      <ul>
         {% for task in work %}
 
         <div class="card mt-2 text-center bx-shadow">
@@ -50,12 +49,10 @@
         {% empty %}
         No Task yet.
         {% endfor %}
-      </ul>
     </div>
 
-    <div class="col">
+    <div class="col-12 col-md-4">
       <h2 class="text-center">Entertainment</h2>
-      <ul>
         {% for task in entertainment %}
 
         <div class="card mt-2 text-center bx-shadow">
@@ -75,7 +72,6 @@
         {% empty %}
         No Task yet.
         {% endfor %}
-      </ul>
     </div>
 
   </div>
