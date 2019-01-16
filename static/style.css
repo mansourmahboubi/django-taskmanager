@@ -1,5 +1,11 @@
-body, html {
-height: 100%;
+html {
+    height: 100%;
+}
+body {
+    height: 100%;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 .bx-shadow {
   -webkit-box-shadow: 0 10px 6px -6px #777;
