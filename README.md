@@ -11,8 +11,7 @@ project works with 3 groups which should be made in database
 * the groups are hardcoded in [views](troject/views.py)
 * it also can be done by getting a query from three last groups
 
-# usage
-feel free to have your version
+# Usage
 you can start with
 ```
 git clone https://github.com/mmans0ur/django-taskmanager.git
@@ -32,4 +31,4 @@ python manage.py runserver
 
 # Technologies
 Django(Lts) + Bootstrap(4.2.1)
-# [Requirements](../requirements.txt)
+# [Requirements](requirements.txt)
