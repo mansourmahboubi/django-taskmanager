@@ -29,9 +29,9 @@ def task_list(request, pk=None):
     context = {}
     Tasks = Task.objects.all()
     #  predefined groups = [ home, work ,entertainment]
-    context['home'] = Tasks.filter(group__title='home')[:5]
-    context['work'] = Tasks.filter(group__title='work').order_by('-updated')[:5]
-    context['entertainment'] = Tasks.filter(group__title='entertainment').order_by('-updated')[:5]
+    context['home'] = Tasks.filter(group__title='home').order_by('-updated')
+    context['work'] = Tasks.filter(group__title='work').order_by('-updated')
+    context['entertainment'] = Tasks.filter(group__title='entertainment').order_by('-updated')
     return render(request, 'troject/task.html', context)
 
 # call it through a button and it changes task status
