@@ -27,11 +27,11 @@ class TaskDelete(DeleteView):
 
 def task_list(request, pk=None):
     context = {}
-    Tasks = Task.objects.all()
+    Tasks = Task.objects.all().order_by('-updated')
     #  predefined groups = [ home, work ,entertainment]
-    context['home'] = Tasks.filter(group__title='home').order_by('-updated')
-    context['work'] = Tasks.filter(group__title='work').order_by('-updated')
-    context['entertainment'] = Tasks.filter(group__title='entertainment').order_by('-updated')
+    context['home'] = Tasks.filter(group__title='home')
+    context['work'] = Tasks.filter(group__title='work')
+    context['entertainment'] = Tasks.filter(group__title='entertainment')
     return render(request, 'troject/task.html', context)
 
 # call it through a button and it changes task status
