@@ -26,7 +26,7 @@ class TaskDelete(DeleteView):
 # it displays home page with task groups
 
 
-def task_list(request, pk=None):
+def task_list(request):
     context = {}
     tasks = Task.objects.all().filter(user__id=request.user.id).order_by('-updated')
     groups = Group.objects.all()[:3].values_list('title', flat=True)

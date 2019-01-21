@@ -26,6 +26,7 @@
       <a class="navbar-brand text-light" href="/">
       Django taskmanager
     </a>
+    <span class="text-warning">{{ request.user }}</span>
       <a href="/edit/create/" class="btn btn-success bx-shadow">Create new task</a>
     </nav>
     {% block content %}{% endblock %}
