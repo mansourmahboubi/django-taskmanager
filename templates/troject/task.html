@@ -6,8 +6,8 @@
   <div class="row">
 
     <div class="col-12 col-md-4">
-      <h2 class="text-center">Home</h2>
-      {% for task in home %}
+      <h2 class="text-center">{{ groups.0 }}</h2>
+      {% for task in first %}
 
       <div class="card mt-2 text-center bx-shadow">
         <div class="card-body">
@@ -29,8 +29,8 @@
     </div>
 
     <div class="col-12 col-md-4">
-      <h2 class="text-center">Work</h2>
-        {% for task in work %}
+      <h2 class="text-center">{{ groups.1 }}</h2>
+        {% for task in second %}
 
         <div class="card mt-2 text-center bx-shadow">
           <div class="card-body">
@@ -52,8 +52,8 @@
     </div>
 
     <div class="col-12 col-md-4">
-      <h2 class="text-center">Entertainment</h2>
-        {% for task in entertainment %}
+      <h2 class="text-center">{{ groups.2 }}</h2>
+        {% for task in third %}
 
         <div class="card mt-2 text-center bx-shadow">
           <div class="card-body">
