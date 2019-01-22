@@ -30,12 +30,26 @@ def task_list(request):
     if not request.user.is_authenticated:
         return render(request, 'login.html', {})
     context = {}
+<<<<<<< HEAD
+    Tasks = Task.objects.order_by('-updated')
+    #  predefined groups = [ home, work ,entertainment]
+    context['home'] = Tasks.filter(group__title='home')
+    context['work'] = Tasks.filter(group__title='work')
+    context['entertainment'] = Tasks.filter(group__title='entertainment')
+||||||| merged common ancestors
+    Tasks = Task.objects.all().order_by('-updated')
+    #  predefined groups = [ home, work ,entertainment]
+    context['home'] = Tasks.filter(group__title='home')
+    context['work'] = Tasks.filter(group__title='work')
+    context['entertainment'] = Tasks.filter(group__title='entertainment')
+=======
     tasks = Task.objects.filter(user__id=request.user.id).order_by('-updated')
     groups = Group.objects.values_list('title', flat=True)
     context['groups'] = groups
     context['first'] = tasks.filter(group__title=groups[0])
     context['second'] = tasks.filter(group__title=groups[1])
     context['third'] = tasks.filter(group__title=groups[2])
+>>>>>>> mulltiuser
     return render(request, 'troject/task.html', context)
 
 

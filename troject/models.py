@@ -1,5 +1,6 @@
 from django.db import models
 from django.core.urlresolvers import reverse
+from django.conf import settings
 
 
 class Group(models.Model):
@@ -12,6 +13,8 @@ class Group(models.Model):
 
 
 class Task(models.Model):
+    user = models.ForeignKey(settings.AUTH_USER_MODEL,
+                             on_delete=models.CASCADE, default="1")
     group = models.ForeignKey(Group)
     status = models.BooleanField(default=False)
     title = models.CharField(max_length=200)
