@@ -14,7 +14,7 @@ class Group(models.Model):
 
 class Task(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL,
-                             on_delete=models.CASCADE, default="1")
+                             on_delete=models.CASCADE)
     group = models.ForeignKey(Group)
     status = models.BooleanField(default=False)
     title = models.CharField(max_length=200)
