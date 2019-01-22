@@ -1,14 +1,19 @@
 {%extends "base.html" %}
+{% load crispy_forms_tags %}
 {% block content %}
-<section class="container my-5">
-  <div class="row">
-    <div class="col-4"></div>
-    <div class="col-4 text-center">
-      <div class="p-3 br2">
-        <h2>Please Login to see your tasks</h2>
+<div class="container mt-5">
+  <div class="row justify-content-md-center">
+    <div class="col-md-auto">
+      <div class="alert alert-success" role="alert">
+        <span class="text-dark">Username: </span><span class="text-danger ml-5">time</span>
+        <hr>
+        <span class="text-dark">Password: </span><span class="text-danger ml-4">timeismoney</span>
       </div>
+      <form action="" method="post" class="text-center">{% csrf_token %}
+        {{ loginform|crispy }}
+        <input class="btn btn-secondary" type="submit" value="Signin" />
+      </form>
     </div>
-    <div class="col-4"></div>
   </div>
-</section>
+</div>
 {% endblock %}
