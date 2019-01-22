@@ -12,10 +12,9 @@ class Taskcreate(LoginRequiredMixin, CreateView):
     model = Task
     fields = ['group', 'title']
 
-    def post(self, request, **kwargs):
-        request.POST = request.POST.copy()
-        request.POST['user'] = self.request.user.id
-        return super(Taskcreate, self).post(request, **kwargs)
+    def form_valid(self, form):
+        form.instance.user = self.request.user
+        return super(Taskcreate, self).form_valid(form)
 
 
 class TaskDelete(LoginRequiredMixin, DeleteView):
