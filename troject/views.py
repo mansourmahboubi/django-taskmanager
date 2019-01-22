@@ -27,6 +27,8 @@ class TaskDelete(DeleteView):
 def task_list(request):
     # the main function
     # it displays home page with task groups
+    if not request.user.is_authenticated:
+        return render(request, 'login.html', {})
     context = {}
     tasks = Task.objects.filter(user__id=request.user.id).order_by('-updated')
     groups = Group.objects.values_list('title', flat=True)
