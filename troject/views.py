@@ -21,7 +21,7 @@ class TaskDelete(DeleteView):
     # limiting the query set to avoid unprivileged deleting
     def get_queryset(self):
         queryset = super(TaskDelete, self).get_queryset()
-        return queryset.filter(status=False, group__user__id=self.request.user.id)
+        return queryset.filter(status=False, user__id=self.request.user.id)
 
 
 def task_list(request):
