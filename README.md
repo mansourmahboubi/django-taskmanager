@@ -1,5 +1,5 @@
 # django-taskmanager
-The repository of Idearun Troject which is a simple task manager
+The repository of django-taskmanager which is a simple task manager
 
 # Information
 project works with 3 groups which should be made in database
