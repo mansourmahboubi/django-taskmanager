@@ -2,14 +2,15 @@
 The repository of django-taskmanager which is a simple task manager
 
 # Information
-project works with 3 groups which should be made in database
-1. home
-2. work
-3. entertainment
+I started django-taskmanager as a singleuser taskmanger which you can find [here](https://github.com/mmans0ur/django-taskmanager/tree/singleuser)
+
+now it is multiuser
 
 
-* the groups are hardcoded in [views](troject/views.py)
-* it also can be done by getting a query from last three groups
+* the groups are defined by website owner
+* each user can makes task in the defined groups
+* each task has two states Pending and Done
+* it works with a query from last three groups
 
 # Usage
 you can start with
@@ -30,5 +31,6 @@ python manage.py runserver
 ```
 
 # Technologies
-Django(Lts) + Bootstrap(4.2.1)
+Django 1.11 + Bootstrap 4.2
+
 # [Requirements](requirements.txt)
