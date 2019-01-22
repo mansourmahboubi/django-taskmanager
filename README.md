@@ -8,7 +8,7 @@ now it is multiuser
 
 
 * the groups are defined by website owner
-* each user can makes task in the defined groups
+* each user can make task in the defined groups
 * each task has two states Pending and Done
 * it works with a query from last three groups
 
