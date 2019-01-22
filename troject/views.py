@@ -27,7 +27,7 @@ class TaskDelete(DeleteView):
 
 def task_list(request, pk=None):
     context = {}
-    Tasks = Task.objects.all().order_by('-updated')
+    Tasks = Task.objects.order_by('-updated')
     #  predefined groups = [ home, work ,entertainment]
     context['home'] = Tasks.filter(group__title='home')
     context['work'] = Tasks.filter(group__title='work')
